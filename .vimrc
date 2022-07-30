@@ -32,6 +32,11 @@ Plugin 'gabrielelana/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 " autosave plugin
 Plugin '907th/vim-auto-save'
+" you complete me, autocompletion
+Plugin 'Valloric/YouCompleteMe'
+" pythonsense plugin, allows for python specific text objects and motions,
+" motions are the same, as vim8+ has by default
+Plugin 'jeetsukumaran/vim-pythonsense'
 
 " all plugins should be placed before this line
 call vundle#end()
@@ -43,6 +48,9 @@ set encoding=utf-8
 
 " show line numbers
 set number
+
+" allow backspace to behave as usual
+set backspace=indent,eol,start
 
 " set tabs to have 4 spaces
 set ts=4
@@ -149,4 +157,9 @@ au Filetype markdown set textwidth=90
 " do not start preview automatically when seeing .md file 
 let g:mkdp_auto_start = 0
 " =============================================
+
+
+" you complete my plugin settings
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
