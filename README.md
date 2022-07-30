@@ -5,4 +5,9 @@ Currently, it contains:
 - .zshrc
 - karabiner.json
 - .tmux.conf
-- .gitignore (most commonly used one)
+- gitignore[*] (most commonly used one)
+- .flake8
+
+
+[*] - gitignore is not dotted to have no effect on current repository files (many of them
+are normally ignored)
