@@ -37,6 +37,8 @@ Plugin 'Valloric/YouCompleteMe'
 " pythonsense plugin, allows for python specific text objects and motions,
 " motions are the same, as vim8+ has by default
 Plugin 'jeetsukumaran/vim-pythonsense'
+" my test plugin
+" Plugin 'file:///Users/technogleb/.vim/bundle/auto_summary'
 
 " all plugins should be placed before this line
 call vundle#end()
@@ -88,6 +90,11 @@ nnoremap <CR> :noh<CR><CR>
 " no swapfile created
 set noswapfile
 
+
+
+" NERDTree specific settings
+" =============================================
+
 " ignore unwanted files
 let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'node_modules/' ]
 
@@ -96,15 +103,24 @@ let NERDTreeShowHidden=1
 
 " automatically start nerdtree when vim start 
 autocmd VimEnter * NERDTree
-" also when new buffer or tab is opened
-autocmd BufWinEnter * NERDTreeMirror
+
 " place the cursor in newly opened file instead of tree view pane
 autocmd VimEnter * wincmd w
+
 " quit nerdtree if it's the only pane left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" =============================================
+
+
+
 " Python specific settings
 " =============================================
+
 " PEP8 indentation settings for python files
 au Filetype python
     \ setlocal tabstop=4
@@ -116,6 +132,7 @@ au Filetype python
 let python_highlight_all=1
 syntax on
 colors zenburn
+
 "python with virtualenv support
 py3 << EOF
 import os
@@ -145,12 +162,17 @@ if 'VIRTUAL_ENV' in os.environ:
     sys.real_prefix = sys.prefix
     sys.prefix = base
 EOF
+
 " =============================================
+
+
 
 " Markdown specific settings
 " =============================================
 au Filetype markdown set textwidth=90
 " =============================================
+
+
 
 " markdown_preview plugin settings
 " =============================================
@@ -159,7 +181,14 @@ let g:mkdp_auto_start = 0
 " =============================================
 
 
-" you complete my plugin settings
+
+" YouCompleteMe specific settings
+" =============================================
+
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" Symbol search
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+
+" =============================================
