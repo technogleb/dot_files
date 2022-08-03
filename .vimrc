@@ -37,6 +37,8 @@ Plugin 'Valloric/YouCompleteMe'
 " pythonsense plugin, allows for python specific text objects and motions,
 " motions are the same, as vim8+ has by default
 Plugin 'jeetsukumaran/vim-pythonsense'
+" ctrpvim, powerfull search for vim
+Plugin 'ctrlpvim/ctrlp.vim'
 " my test plugin
 " Plugin 'file:///Users/technogleb/.vim/bundle/auto_summary'
 
@@ -66,6 +68,10 @@ set expandtab
 " when using the >> or << commands, shift lines by 4 spaces
 set shiftwidth=4
 
+" enable folding
+set foldmethod=indent
+set foldlevel=99
+
 " show a visual line under the cursor's current line
 set cursorline
 
@@ -90,6 +96,13 @@ nnoremap <CR> :noh<CR><CR>
 " no swapfile created
 set noswapfile
 
+" make theme depend on day time (if it's daylight, turn on light theme)
+if strftime("%H") < 20 && strftime("%H") > 6
+    colors summerfruit256
+else
+    colors zenburn
+endif
+
 
 
 " NERDTree specific settings
@@ -101,16 +114,17 @@ let NERDTreeIgnore = [ '__pycache__', '\.pyc$', '\.o$', '\.swp',  '*\.swp',  'no
 " show hidden files
 let NERDTreeShowHidden=1
 
-" Start NERDTree when Vim is started without file arguments.
+" Start NERDTree. If a file is specified, move the cursor to its window.
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " quit nerdtree if it's the only pane left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+"    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+"autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
 " =============================================
 
 
@@ -129,7 +143,6 @@ au Filetype python
 " enable python syntax
 let python_highlight_all=1
 syntax on
-colors zenburn
 
 "python with virtualenv support
 py3 << EOF
