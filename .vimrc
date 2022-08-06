@@ -75,6 +75,10 @@ set foldlevel=99
 " show a visual line under the cursor's current line
 set cursorline
 
+" set where splits open
+set splitbelow
+set splitright
+
 " show the matching part of the pair for [] {} and ()
 " set showmatch
 
