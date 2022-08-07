@@ -39,6 +39,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jeetsukumaran/vim-pythonsense'
 " ctrpvim, powerfull search for vim
 Plugin 'ctrlpvim/ctrlp.vim'
+" allow to easily comment something
+Plugin 'tpope/vim-commentary'
 " my test plugin
 " Plugin 'file:///Users/technogleb/.vim/bundle/auto_summary'
 
