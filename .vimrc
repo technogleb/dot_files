@@ -77,6 +77,11 @@ set foldlevel=99
 " show a visual line under the cursor's current line
 set cursorline
 
+" set textwidth=90 for all files
+set textwidth=90
+" mark it visulally with colorcolumn
+set colorcolumn=91
+
 " set where splits open
 set splitbelow
 set splitright
@@ -150,7 +155,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 au Filetype python
     \ setlocal tabstop=4
     \ | setlocal softtabstop=4
-    \ | setlocal textwidth=90
     \ | setlocal fileformat=unix
 
 " enable python syntax
@@ -187,13 +191,6 @@ if 'VIRTUAL_ENV' in os.environ:
     sys.prefix = base
 EOF
 
-" =============================================
-
-
-
-" Markdown specific settings
-" =============================================
-au Filetype markdown set textwidth=90
 " =============================================
 
 
