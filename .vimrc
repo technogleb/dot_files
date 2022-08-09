@@ -161,36 +161,6 @@ au Filetype python
 let python_highlight_all=1
 syntax on
 
-"python with virtualenv support
-py3 << EOF
-import os
-import sys
-import site
-
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate = os.path.join(project_base_dir, 'bin/activate')
-    __file__ = activate
-    abs_file = os.path.abspath(__file__)
-
-    bin_dir = os.path.dirname(abs_file)
-    base = bin_dir[: -len("__BIN_NAME__") - 1]  # strip away the bin part from the __file__, plus the path separator
-
-    # prepend bin to PATH (this file is inside the bin directory)
-    os.environ["PATH"] = os.pathsep.join([bin_dir] + os.environ.get("PATH", "").split(os.pathsep))
-    os.environ["VIRTUAL_ENV"] = base  # virtual env is right above bin directory
-
-    # add the virtual environments libraries to the host python import mechanism
-    prev_length = len(sys.path)
-    for lib in "__LIB_FOLDERS__".split(os.pathsep):
-        path = os.path.realpath(os.path.join(bin_dir, lib))
-        site.addsitedir(path)
-    sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]
-
-    sys.real_prefix = sys.prefix
-    sys.prefix = base
-EOF
-
 " =============================================
 
 
