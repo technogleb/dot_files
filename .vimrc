@@ -86,6 +86,12 @@ set colorcolumn=91
 set splitbelow
 set splitright
 
+" map leader to space
+map <Space> <Leader>
+
+" map leader-w to c-w
+nnoremap <Leader>w <C-w>
+
 " show the matching part of the pair for [] {} and ()
 " set showmatch
 
