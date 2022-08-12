@@ -92,6 +92,10 @@ map <Space> <Leader>
 " map leader-w to c-w
 nnoremap <Leader>w <C-w>
 
+" map leader-q to :q
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>s :w<cr>
+
 " show the matching part of the pair for [] {} and ()
 " set showmatch
 
