@@ -26,8 +26,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 " colorscheme solarized light
 Plugin 'altercation/vim-colors-solarized'
-" markdown syntax highlightning
-Plugin 'gabrielelana/vim-markdown'
 " preview markdown files 
 Plugin 'iamcco/markdown-preview.nvim'
 " autosave plugin
@@ -94,7 +92,13 @@ nnoremap <Leader>w <C-w>
 
 " map leader-q to :q
 nnoremap <Leader>q :q<cr>
+
+" map leader-s to :w
 nnoremap <Leader>s :w<cr>
+
+" map leader-b to list all buffers and prepare prompt
+nnoremap <Leader>b :ls<CR>:b<Space>
+
 
 " show the matching part of the pair for [] {} and ()
 " set showmatch
