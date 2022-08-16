@@ -122,12 +122,10 @@ nnoremap <CR> :noh<CR><CR>
 set noswapfile
 
 " make theme depend on day time (if it's daylight, turn on light theme)
-if strftime("%H") < 20 && strftime("%H") > 6
-	set t_Co=256
-    colors summerfruit256
-else
-    colors zenburn
-endif
+colors zenburn
+
+" make it all transparent!
+hi Normal guibg=NONE ctermbg=NONE
 
 " set russian keymap for comfortable work with russian layout
 set keymap=russian-jcukenwin
