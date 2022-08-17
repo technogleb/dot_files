@@ -7,6 +7,8 @@ Currently, it contains:
 - .tmux.conf
 - gitignore[*] (most commonly used one)
 - .flake8
+- alacritty.yml
+- init.vim
 
 
 [*] - gitignore is not dotted to have no effect on current repository files (many of them
