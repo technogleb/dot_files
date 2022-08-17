@@ -24,8 +24,10 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " colorscheme ZenBurn
 Plugin 'jnurmine/Zenburn'
-" colorscheme solarized light
-Plugin 'altercation/vim-colors-solarized'
+" colorscheme papercolor
+Plugin 'NLKNguyen/papercolor-theme'
+" colorscheme darcula
+Plugin 'doums/darcula'
 " preview markdown files 
 Plugin 'iamcco/markdown-preview.nvim'
 " autosave plugin
@@ -39,8 +41,8 @@ Plugin 'jeetsukumaran/vim-pythonsense'
 Plugin 'ctrlpvim/ctrlp.vim'
 " allow to easily comment something
 Plugin 'tpope/vim-commentary'
-" my test plugin
-" Plugin 'file:///Users/technogleb/.vim/bundle/auto_summary'
+" auto_summary plugin (my plug)
+Plugin 'technogleb/auto_summary'
 
 " all plugins should be placed before this line
 call vundle#end()
@@ -121,12 +123,6 @@ nnoremap <CR> :noh<CR><CR>
 " no swapfile created
 set noswapfile
 
-" make theme depend on day time (if it's daylight, turn on light theme)
-colors zenburn
-
-" make it all transparent!
-hi Normal guibg=NONE ctermbg=NONE
-
 " set russian keymap for comfortable work with russian layout
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -151,10 +147,6 @@ autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | e
 " quit nerdtree if it's the only pane left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-" autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-"    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-"autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
 " =============================================
 
 
@@ -194,4 +186,23 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Symbol search
 nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 
+" =============================================
+
+
+
+" colorscheme setup
+" =============================================
+" dark colorscheme 1
+" colorscheme zenburn
+
+" dark colorscheme 2
+colorscheme darcula
+
+" ligth colorscheme (no transparency here)
+" set background=dark
+" colorscheme PaperColor
+
+" make it all transparent!
+hi! Normal guibg=NONE ctermbg=NONE
+hi! NonText ctermbg=NONE guibg=NONE
 " =============================================
