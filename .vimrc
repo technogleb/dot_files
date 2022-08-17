@@ -28,12 +28,19 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'NLKNguyen/papercolor-theme'
 " colorscheme darcula
 Plugin 'doums/darcula'
+if !has('nvim')
+    echom "You're running inside classic vim!"
+    " you complete me, autocompletion
+    Plugin 'Valloric/YouCompleteMe'
+endif
+" automatically tabularize things
+Plugin 'godlygeek/tabular'
+" markdown syntax highlightning and usefull mappings
+Plugin 'preservim/vim-markdown'
 " preview markdown files 
 Plugin 'iamcco/markdown-preview.nvim'
 " autosave plugin
 Plugin '907th/vim-auto-save'
-" you complete me, autocompletion
-Plugin 'Valloric/YouCompleteMe'
 " pythonsense plugin, allows for python specific text objects and motions,
 " motions are the same, as vim8+ has by default
 Plugin 'jeetsukumaran/vim-pythonsense'
