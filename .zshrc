@@ -70,7 +70,7 @@ ZSH_THEME="miloshadzic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,8 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # set vim mode
-set -o vi
+bindkey -v
 
 # but reserve ctr-R for recursive search
 bindkey '^R' history-incremental-search-backward
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
