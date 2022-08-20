@@ -22,18 +22,23 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 " check PEP8 via flake8 on each save
 Plugin 'nvie/vim-flake8'
-" colorscheme ZenBurn
+
+" color schemas
 Plugin 'jnurmine/Zenburn'
-" colorscheme papercolor
 Plugin 'NLKNguyen/papercolor-theme'
-" colorscheme darcula
 Plugin 'doums/darcula'
+Plugin 'morhetz/gruvbox'
+Plugin 'mhartington/oceanic-next'
+Plugin 'kaicataldo/material.vim'
+Plugin 'ayu-theme/ayu-vim'
+
+" YouCompleteMe, autocompletion for vim 
+" (for nvim I use its native LSP clients, see ~/.config/nvim/init.vim)
 if !has('nvim')
-    echom "You're running inside classic vim!"
     " you complete me, autocompletion
     Plugin 'Valloric/YouCompleteMe'
 endif
-" automatically tabularize things
+
 Plugin 'godlygeek/tabular'
 " markdown syntax highlightning and usefull mappings
 Plugin 'preservim/vim-markdown'
@@ -199,15 +204,8 @@ nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
 
 " colorscheme setup
 " =============================================
-" dark colorscheme 1
-" colorscheme zenburn
 
-" dark colorscheme 2
-colorscheme darcula
-
-" ligth colorscheme (no transparency here)
-" set background=dark
-" colorscheme PaperColor
+colorscheme gruvbox
 
 " make it all transparent!
 hi! Normal guibg=NONE ctermbg=NONE
