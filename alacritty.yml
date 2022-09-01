@@ -937,7 +937,129 @@ schemes:
       cyan:    '0x0db9d7'
       white:   '0xacb0d0'
 
-colors: *tokyo-night
+  papercolor-light: &papercolor-light
+    primary:
+      background: '0xeeeeee'
+      foreground: '0x878787'
+
+    cursor:
+      text: '0xeeeeee'
+      cursor: '0x878787'
+
+    # Normal colors
+    normal:
+      black:   '0xeeeeee'
+      red:     '0xaf0000'
+      green:   '0x008700'
+      yellow:  '0x5f8700'
+      blue:    '0x0087af'
+      magenta: '0x878787'
+      cyan:    '0x005f87'
+      white:   '0x444444'
+
+    # Bright colors
+    bright:
+      black:   '0xbcbcbc'
+      red:     '0xd70000'
+      green:   '0xd70087'
+      yellow:  '0x8700af'
+      blue:    '0xd75f00'
+      magenta: '0xd75f00'
+      cyan:    '0x005faf'
+      white:   '0x005f87'
+
+  gruvbox-dark: &gruvbox-dark
+    # Default colors
+    primary:
+      # hard contrast: background = '0x1d2021'
+      background: '0x282828'
+      # soft contrast: background = '0x32302f'
+      foreground: '0xebdbb2'
+
+    # Normal colors
+    normal:
+      black:   '0x282828'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0xa89984'
+
+    # Bright colors
+    bright:
+      black:   '0x928374'
+      red:     '0xfb4934'
+      green:   '0xb8bb26'
+      yellow:  '0xfabd2f'
+      blue:    '0x83a598'
+      magenta: '0xd3869b'
+      cyan:    '0x8ec07c'
+      white:   '0xebdbb2'
+
+
+  gruvbox-light: &gruvbox-light
+    # Colors (Gruvbox light)
+    # Default colors
+    primary:
+      # hard contrast: background = '0xf9f5d7'
+      background: '0xfbf1c7'
+      # soft contrast: background = '0xf2e5bc'
+      foreground: '0x3c3836'
+
+    # Normal colors
+    normal:
+      black:   '0xfbf1c7'
+      red:     '0xcc241d'
+      green:   '0x98971a'
+      yellow:  '0xd79921'
+      blue:    '0x458588'
+      magenta: '0xb16286'
+      cyan:    '0x689d6a'
+      white:   '0x7c6f64'
+
+    # Bright colors
+    bright:
+      black:   '0x928374'
+      red:     '0x9d0006'
+      green:   '0x79740e'
+      yellow:  '0xb57614'
+      blue:    '0x076678'
+      magenta: '0x8f3f71'
+      cyan:    '0x427b58'
+      white:   '0x3c3836'
+
+  solarized-light: &solarized-light
+    primary:
+      background: '0xfdf6e3'
+      foreground: '0x586e75'
+
+    # Normal colors
+    normal:
+      black:   '0x073642'
+      red:     '0xdc322f'
+      green:   '0x859900'
+      yellow:  '0xb58900'
+      blue:    '0x268bd2'
+      magenta: '0xd33682'
+      cyan:    '0x2aa198'
+      white:   '0xeee8d5'
+
+    # Bright colors
+    bright:
+      black:   '0x002b36'
+      red:     '0xcb4b16'
+      green:   '0x586e75'
+      yellow:  '0x657b83'
+      blue:    '0x839496'
+      magenta: '0x6c71c4'
+      cyan:    '0x93a1a1'
+      white:   '0xfdf6e3'
+
+
+
+colors: *gruvbox-dark
 
 
 key_bindings:
