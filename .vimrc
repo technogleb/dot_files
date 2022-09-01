@@ -32,10 +32,13 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'kaicataldo/material.vim'
 Plugin 'ayu-theme/ayu-vim'
 
-" YouCompleteMe, autocompletion for vim 
-" (for nvim I use its native LSP clients, see ~/.config/nvim/init.vim)
-if !has('nvim')
-    " you complete me, autocompletion
+" autocompletion plugins
+" YouCompleteMe, autocompletion for vim;
+" For nvim I use its native LSP client 'neovim/nvim-lspconfig', its configuration is
+" located at ~/.config/nvim/init.vim)
+if has('nvim')
+    Plugin 'neovim/nvim-lspconfig'
+else
     Plugin 'Valloric/YouCompleteMe'
 endif
 
