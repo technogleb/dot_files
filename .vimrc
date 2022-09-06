@@ -22,6 +22,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 " check PEP8 via flake8 on each save
 Plugin 'nvie/vim-flake8'
+" pretty statusbar
+Plugin 'itchyny/lightline.vim'
 
 " color schemas
 Plugin 'jnurmine/Zenburn'
@@ -56,8 +58,12 @@ Plugin 'jeetsukumaran/vim-pythonsense'
 Plugin 'ctrlpvim/ctrlp.vim'
 " allow to easily comment something
 Plugin 'tpope/vim-commentary'
+" easy-motion plugin
+Plugin 'easymotion/vim-easymotion'
 " auto_summary plugin (my plug)
 Plugin 'technogleb/auto_summary'
+" edit .ipynb in vim
+Plugin 'goerz/jupytext.vim'
 
 " all plugins should be placed before this line
 call vundle#end()
@@ -102,7 +108,8 @@ set splitbelow
 set splitright
 
 " map leader to space
-map <Space> <Leader>
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " map leader-w to c-w
 nnoremap <Leader>w <C-w>
