@@ -40,6 +40,7 @@ Plugin 'ayu-theme/ayu-vim'
 " located at ~/.config/nvim/init.vim)
 if has('nvim')
     Plugin 'neovim/nvim-lspconfig'
+    Plugin 'hrsh7th/nvim-compe'
 else
     Plugin 'Valloric/YouCompleteMe'
 endif
@@ -64,11 +65,16 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'technogleb/auto_summary'
 " edit .ipynb in vim
 Plugin 'goerz/jupytext.vim'
+" seamless navigation between tmux and vim panes
+Plugin 'christoomey/vim-tmux-navigator'
 
 " all plugins should be placed before this line
 call vundle#end()
 filetype plugin indent on
 " ==================================================================
+
+" enable mouse for scrolling and selecting
+set mouse=a
 
 " set UTF-8 encoding
 set encoding=utf-8
@@ -168,6 +174,10 @@ autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | e
 
 " quit nerdtree if it's the only pane left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" fix conflicts with vim-tmux-navigator
+let g:NERDTreeMapJumpPrevSibling=""
+let g:NERDTreeMapJumpNextSibling=""
 
 " =============================================
 

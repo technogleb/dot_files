@@ -192,7 +192,7 @@
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -211,7 +211,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_control"
+                                            "fn"
                                         ]
                                     }
                                 },
