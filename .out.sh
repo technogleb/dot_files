@@ -1,8 +1,9 @@
 #!/bin/zsh
 
-cp ~/.vimrc ./
-cp ~/.zshrc ./
-cp ~/.tmux.conf ./
-cp ~/.config/alacritty/alacritty.yml ./
-cp ~/.config/nvim/init.vim ./
-cp ~/.config/karabiner/karabiner.json ./
+cp ./.vimrc ~/.vimrc
+cp ./.zshrc ~/.zshrc
+cp ./.tmux.conf ~/.tmux.conf
+cp ./alacritty.yml ~/.config/alacritty/alacritty.yml
+cp ./init.vim ~/.config/nvim/init.vim
+cp ./karabiner.json ~/.config/karabiner/karabiner.json
+
