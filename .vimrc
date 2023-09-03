@@ -129,7 +129,6 @@ nnoremap <Leader>s :w<cr>
 " map leader-b to list all buffers and prepare prompt
 nnoremap <Leader>b :ls<CR>:b<Space>
 
-
 " show the matching part of the pair for [] {} and ()
 " set showmatch
 
@@ -156,6 +155,7 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=Cyan
+inoremap <c-l> <c-^>
 
 
 
